@@ -1,0 +1,115 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+
+<div id="omset" style="min-width: 310px; height: 400px; margin: 0 auto"></div>
+
+
+<script>
+  $(function () {
+    $('#omset').highcharts({
+        title: {
+            text: 'Monthly Average Temperature',
+            x: -20 //center
+        },
+        subtitle: {
+            text: 'Source: WorldClimate.com',
+            x: -20
+        },
+        xAxis: {
+            categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+        },
+        yAxis: {
+            title: {
+                text: 'Jumlah Omset'
+            },
+            plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+            }]
+        },
+        tooltip: {
+            valueSuffix: '°C'
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'middle',
+            borderWidth: 0
+        },
+        series: [{
+            name: 'Tokyo',
+            data: [7.0, 6.9, 9.5, 14.5, 18.2, 21.5, 25.2, 26.5, 23.3, 18.3, 13.9, 9.6]
+        },]
+    });
+});
+</script>
+<!-- <script type="text/javascript">
+
+  var chart1; // globally available
+$(document).ready(function() {
+      chart1 = new Highcharts.Chart({
+         chart: {
+            backgroundColor: '#deffda',
+            renderTo: 'omset',
+            type: 'line'
+         },
+        title: {
+            text: "Grafik Omset Resto",
+            style: {
+                color: 'black',
+                fontWeight: 'bold'
+            }
+        },
+         xAxis: {
+            
+            categories: [
+            
+            // <?php $omset = $this->db->query("SELECT tanggal_transaksi FROM opsi_transaksi_penjualan WHERE status_menu = 'reguler' GROUP BY tanggal_transaksi");
+            //       $get_tanggal =$omset->result();
+            //       foreach($get_tanggal as $tgl){
+            //         $t = $tgl->tanggal_transaksi;
+                    
+            //  echo '"'.TanggalIndo($t).'"'.",";
+            //   } ?>
+              "14 September 2016",   
+
+            ]
+         },
+         yAxis: {
+            title: {
+               text: 'Jumlah Omset',
+               style: {
+                color: 'black',
+                fontWeight: 'bold'
+            }
+            }
+         },
+         plotOptions:{
+           series: {
+            color:"#1f8500"
+           } 
+         },
+              series:             
+            [
+                  {
+                      name: 'Jumlah Omset ',
+                      data: [
+                      // <?php
+                      //       $omset = $this->db->query("SELECT tanggal_transaksi,
+                      //            COUNT(subtotal) AS total_transaksi, SUM(subtotal) as total_omset FROM opsi_transaksi_penjualan
+                      //             WHERE status_menu = 'reguler' GROUP BY tanggal_transaksi");
+                      //            $totalnya = 0;
+                      //       $hasil_omset = $omset->result();
+                      //       foreach($hasil_omset as $daftar){
+                      //    echo "$daftar->total_omset,";
+                      // } ?>
+
+                      140000,],
+                  },
+            ]
+      });
+   });  
+</script> -->

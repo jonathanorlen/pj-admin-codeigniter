@@ -1,0 +1,172 @@
+<html>
+<title></title>
+<body onload="bg();" onkeydown="processKeyDown(event);" >
+<table id="general-table" class="table table-stripped">
+	<thead>
+		<tr>
+			<th class="text-center">#</th>
+			<th>Product</th>
+			<th>Qty</th>
+			<th>Price</th>
+			<th>Disc</th>
+			<th>Subtotal</th>
+			<th class="text-center">Ubah</th>
+			<th class="text-center">Hapus</th>
+		</tr>
+	</thead>
+	<tbody class="dataSelling">
+		<tr>
+			<td>1</td>
+			<td>Marimas Buah</td>
+			<td>2</td>
+			<td>5000</td>
+			<td>10%</td>
+			<td>10000</td>
+            <td id="r1c1" data-id="1" data-nama="Edit Marimas Buah 1" align="center">
+            	<div class="btn-group btn-group-xs">
+					<a class="btn btn-default" title="" data-toggle="tooltip" href="javascript:void(0)" data-original-title="Edit">
+						<i class="icon-edit"></i>
+						Ubah Qty
+					</a>
+				</div>
+			</td>
+            <td id="r1c2" data-id="1" data-nama="Del Marimas Buah 1" align="center">
+				<div class="btn-group btn-group-xs">
+					<a class="btn btn-default" title="" data-toggle="tooltip" href="javascript:void(0)" data-original-title="Delete">
+						<i class="icon-remove"></i>
+						Hapus
+					</a>
+				</div>
+            </td>
+        </tr>
+        <tr>
+			<td>1</td>
+			<td>Marimas Buah</td>
+			<td>2</td>
+			<td>5000</td>
+			<td>10%</td>
+			<td>10000</td>
+            <td id="r2c1" data-id="1" data-nama="Edit Marimas Buah 2" align="center">
+            	<div class="btn-group btn-group-xs">
+					<a class="btn btn-default" title="" data-toggle="tooltip" href="javascript:void(0)" data-original-title="Edit">
+						<i class="icon-edit"></i>
+						Ubah Qty
+					</a>
+				</div>
+			</td>
+            <td id="r2c2" data-id="1" data-nama="Del Marimas Buah 2" align="center">
+				<div class="btn-group btn-group-xs">
+					<a class="btn btn-default" title="" data-toggle="tooltip" href="javascript:void(0)" data-original-title="Delete">
+						<i class="icon-remove"></i>
+						Hapus
+					</a>
+				</div>
+            </td>
+        </tr>
+        <tr>
+			<td>1</td>
+			<td>Marimas Buah</td>
+			<td>2</td>
+			<td>5000</td>
+			<td>10%</td>
+			<td>10000</td>
+            <td id="r3c1" data-id="1" data-nama="Edit Marimas Buah 3" align="center">
+            	<div class="btn-group btn-group-xs">
+					<a class="btn btn-default" title="" data-toggle="tooltip" href="javascript:void(0)" data-original-title="Edit">
+						<i class="icon-edit"></i>
+						Ubah Qty
+					</a>
+				</div>
+			</td>
+            <td id="r3c2" data-id="1" data-nama="Del Marimas Buah 3" align="center">
+				<div class="btn-group btn-group-xs">
+					<a class="btn btn-default" title="" data-toggle="tooltip" href="javascript:void(0)" data-original-title="Delete">
+						<i class="icon-remove"></i>
+						Hapus
+					</a>
+				</div>
+            </td>
+        </tr>
+        <tr>
+			<td>1</td>
+			<td>Marimas Buah</td>
+			<td>2</td>
+			<td>5000</td>
+			<td>10%</td>
+			<td>10000</td>
+            <td id="r4c1" data-id="1" data-nama="Edit Marimas Buah 4" align="center">
+            	<div class="btn-group btn-group-xs">
+					<a class="btn btn-default" title="" data-toggle="tooltip" href="javascript:void(0)" data-original-title="Edit">
+						<i class="icon-edit"></i>
+						Ubah Qty
+					</a>
+				</div>
+			</td>
+            <td id="r4c2" data-id="1" data-nama="Del Marimas Buah 4" align="center">
+				<div class="btn-group btn-group-xs">
+					<a class="btn btn-default" title="" data-toggle="tooltip" href="javascript:void(0)" data-original-title="Delete">
+						<i class="icon-remove"></i>
+						Hapus
+					</a>
+				</div>
+            </td>
+        </tr>
+	</tbody>
+</table>
+</body>
+</html>
+<script src="js/jquery.js"></script>
+<script src="js/keycode.js"></script>
+<script type="text/javascript">
+var b4 = "";
+var col = 1;
+var row = 1;
+
+function bg() {
+    var rc = "r" + row + "c" + col;
+    if (b4 == "") b4 = rc;
+    $("#"+b4).css("backgroundColor","white");
+    $("#"+rc).css("backgroundColor","green");
+    //$("#id_product").val($("#"+rc).css("backgroundColor","green").data("id"));
+    b4 = rc;
+}
+
+
+function processKeyDown(e) {
+    var keyCode;
+
+    if(e.which) { 
+        keyCode = e.which;
+    } else {
+        alert("Unknown event type.");
+        return ;
+    }
+    processKeyHandle(keyCode);
+}
+
+function processKeyHandle(keyCode) {
+    var nc = 0;
+    switch(keyCode) {
+    case VK_LEFT :
+        if (col > 1) col--;
+        bg();
+        break;
+    case VK_UP :
+        if (row > 1) row--;
+        bg();
+        break;
+    case VK_RIGHT :
+        if (col < 2) col++;
+        bg();
+        break;
+    case VK_DOWN :  
+        if (row < 5) row++;
+        bg();
+        break;
+    case VK_ENTER : 
+        //$("#id_product").val($("#"+b4).data("nama"));
+        alert($("#"+b4).data("nama"));
+        break;
+    }
+}
+</script>
